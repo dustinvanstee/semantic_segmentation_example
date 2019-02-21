@@ -89,7 +89,7 @@ def gen_batch_function(data_folder, image_shape):
 	return get_batches_fn
 
 
-def read_images_dv(data_folder, image_shape) :
+def read_images_opt(data_folder, image_shape) :
 	image_paths = glob(os.path.join(data_folder, 'image_2', '*.png'))
 	label_paths = {
 			re.sub(r'_(lane|road)_', '_', os.path.basename(path)): path
@@ -126,8 +126,8 @@ def read_images_dv(data_folder, image_shape) :
 	return image_target
 
 
-def gen_batch_function_dv(image_target):
-	def get_batches_fn_dv(batch_size):
+def gen_batch_function_opt(image_target):
+	def get_batches_fn_opt(batch_size):
 		random.shuffle(image_target)
 		#pdb.set_trace()
 
@@ -140,7 +140,7 @@ def gen_batch_function_dv(image_target):
 				gt_images.append(img_target_tuple[1])
 
 			yield np.array(images), np.array(gt_images)
-	return get_batches_fn_dv
+	return get_batches_fn_opt
 
 
 #return get_batches_fn

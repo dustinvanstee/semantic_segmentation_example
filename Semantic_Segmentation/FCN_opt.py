@@ -10,7 +10,7 @@ from PIL import Image
 import tensorflow as tf
 import pdb
 import time
-import helper_dv
+import helper_opt
 
 # Notes
 # /gpfs/b8s013/cssc/Semantic_Segmentation/Data/Road/data_road/training/image_2
@@ -113,12 +113,12 @@ def run():
 	#pdb.set_trace()
 
 	t0 = time.time()
-	image_target = helper_dv.read_images_dv(training_dir, IMAGE_SHAPE)
+	image_target = helper_opt.read_images_opt(training_dir, IMAGE_SHAPE)
 	t1 = time.time()
 	print("####################")
 	print("Read time = {}".format(t1-t0))
 	print("####################")
-	get_batches_fn = helper_dv.gen_batch_function_dv(image_target)
+	get_batches_fn = helper_opt.gen_batch_function_opt(image_target)
 
 
 	config = tf.ConfigProto(device_count = {'GPU': 1})
@@ -147,7 +147,7 @@ def run():
 		train_op, cross_entropy_loss, image_input,
 		correct_label, keep_prob, learning_rate)
 
-		helper_dv.save_inference_samples(runs_dir, data_dir, session, IMAGE_SHAPE, logits, keep_prob, image_input)
+		helper_opt.save_inference_samples(runs_dir, data_dir, session, IMAGE_SHAPE, logits, keep_prob, image_input)
 #helper.save_inference_samples(runs_dir, data_dir, session, IMAGE_SHAPE, logits, keep_prob, image_input)
 		print("All done!")
 		
