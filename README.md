@@ -17,3 +17,9 @@ eg.
 
 Then just run 
 ```python FCN.py``` or ```python FCN_opt.py```
+
+--- 
+Note, if you are using PowerAI run this prior to python job.
+```source /opt/DL/tensorflow/bin/tensorflow-activate```
+
+Verify your runs are using GPU resources with ```nvidia-smi -l```
