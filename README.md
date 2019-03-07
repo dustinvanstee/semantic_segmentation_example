@@ -9,11 +9,17 @@ This code is useful to highlight the perils of downloading opensource implementa
 
 ---
 To Run :
-download kitti base data set --> http://www.cvlibs.net/download.php?file=data_road.zip and unzip to directory of your choice.
+1. Clone git repo to directory of your choice 
+  ```git clone https://github.com/dustinvanstee/semantic_segmentation_example.git```
+2. ```cd ./semantic_segmentation_example/Semantic_Segmentation```
+3. make Data/Road directory under Semantic_Segmentation ; ``mkdir Data/Road```
+4. ``` cd Data/Road```
+5. download kitti base data set --> http://www.cvlibs.net/download.php?file=data_road.zip and unzip to directory of your choice.  Preferably, this would be in a ```Data/Road``` directory under the git repo 
 
 Recommend using anaconda to install your python packages and then just modify the code to point to the proper data directory ...
+6. get vgg model
 eg. 
-```data_dir = './Data/Road/'```
+```training_dir = './Data/Road/data_road/training'```
 
 Then just run 
 ```python FCN.py``` or ```python FCN_opt.py```
@@ -23,3 +29,19 @@ Note, if you are using PowerAI run this prior to python job.
 ```source /opt/DL/tensorflow/bin/tensorflow-activate```
 
 Verify your runs are using GPU resources with ```nvidia-smi -l```
+
+--- 
+Note, if you are using AWS run this prior to python job
+```source /opt/DL/tensorflow/bin/tensorflow-activate```
+
+Verify your runs are using GPU resources with ```nvidia-smi -l```
+```source activate tensorflow_p36
+cd /home/ubuntu
+
+
+cd ~/semantic_segmentation_example/Semantic_Segmentation
+mkdir Data/Road
+
+cd Data/Road
+wget https://s3.eu-central-1.amazonaws.com/avg-kitti/data_road.zip
+unzip data_road.zip```
