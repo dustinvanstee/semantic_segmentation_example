@@ -18,14 +18,10 @@ To Run :
 ``` cd Data/Road```
 5. download kitti base data set --> http://www.cvlibs.net/download.php?file=data_road.zip and unzip to directory of your choice.  Preferably, this would be in a ```Data/Road``` directory under the git repo 
 
-
 6. get vgg model
+```python get_vgg.py``` # writes output to Data/vgg
 
-
-eg. 
-```training_dir = './Data/Road/data_road/training'```
-
-Then just run 
+7, Run workload 
 ```python FCN.py``` or ```python FCN_opt.py```
 
 --- 
@@ -36,16 +32,9 @@ Verify your runs are using GPU resources with ```nvidia-smi -l```
 
 --- 
 Note, if you are using AWS run this prior to python job
-```source /opt/DL/tensorflow/bin/tensorflow-activate```
+[Tested with Deep Learning AMI (Ubuntu) Version 21.2 with p3.2xlarge]
+```source source activate tensorflow_p36```
+```pip install tqdm```
 
-Verify your runs are using GPU resources with ```nvidia-smi -l```
-```source activate tensorflow_p36
-cd /home/ubuntu
+---
 
-
-cd ~/semantic_segmentation_example/Semantic_Segmentation
-mkdir Data/Road
-
-cd Data/Road
-wget https://s3.eu-central-1.amazonaws.com/avg-kitti/data_road.zip
-unzip data_road.zip```
