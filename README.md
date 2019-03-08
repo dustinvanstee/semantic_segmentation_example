@@ -33,9 +33,9 @@ Verify your runs are using GPU resources with ```nvidia-smi -l```
 
 --- 
 Note, if you are using AWS run this prior to python job
-[Tested with Deep Learning AMI (Ubuntu) Version 21.2 with p3.2xlarge]
-```source source activate tensorflow_p36```
-```pip install tqdm```
+[Tested with Deep Learning AMI (Ubuntu) Version 21.2 with p3.2xlarge]\
+```source source activate tensorflow_p36```\
+```pip install tqdm```\
 
 ---
 
