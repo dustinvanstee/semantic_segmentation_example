@@ -8,8 +8,8 @@ This is a sample implementation of semantic segmentation using kitti [http://www
 This code is useful to highlight the perils of downloading opensource implementations 'as-is'.  Typically to get the best performance you need to be careful about the data preprocessing pipeline.  See PDF for some highlights of the modifications!
 
 ---
-To Run : \
-0. Setup python environment (see a couple platform specifics below)
+To Run : Setup python environment (see a couple platform specifics below)
+
 1. Clone git repo to directory of your choice \
   ```git clone https://github.com/dustinvanstee/semantic_segmentation_example.git```
 2. ```cd ./semantic_segmentation_example/Semantic_Segmentation```
